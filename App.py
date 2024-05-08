@@ -1,4 +1,4 @@
-import plotly==5.22.0 as spx
+import plotly==5.22.0 as px
 import pandas==2.2.2 as pd
 import streamlit==1.34.0 as st
 
