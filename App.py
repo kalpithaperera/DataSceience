@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Setting page configuration
 st.set_page_config(
@@ -67,23 +68,20 @@ create_kpi_metrics(kpi_values)
 def create_visualizations(df: pd.DataFrame) -> None:
     """Create visualizations"""
     # Visualization 1: Sales by Region
-    df.groupby("Region")["Sales"].sum().plot(kind="bar", title="Sales by Region")
-    st.pyplot()
+    ax = df.groupby("Region")["Sales"].sum().plot(kind="bar", title="Sales by Region")
+    st.pyplot(ax)
     st.markdown("---")
 
     # Visualization 2: Sales by Category (Pie Chart)
-    df_filtered.groupby("Category")["Sales"].sum().plot(kind="pie", title="Sales by Category")
-    st.pyplot()
+    ax = df_filtered.groupby("Category")["Sales"].sum().plot(kind="pie", title="Sales by Category")
+    st.pyplot(ax)
     st.markdown("---")
 
     # Visualization 3: Sales by Sub-Category
-    df.groupby("Sub-Category")["Sales"].sum().plot(kind="bar", title="Sales by Sub-Category")
-    st.pyplot()
+    ax = df.groupby("Sub-Category")["Sales"].sum().plot(kind="bar", title="Sales by Sub-Category")
+    st.pyplot(ax)
     st.markdown("---")
 
     # Visualization 4: Profit by Country
-    df.groupby("Country")["Profit"].sum().plot(kind="bar", title="Profit by Country")
-    st.pyplot()
-
-create_visualizations(df_filtered)
-
+    ax = df.groupby("Country")["Profit"].sum().plot(kind="bar", title="Profit by Country")
+    st.pyplot
