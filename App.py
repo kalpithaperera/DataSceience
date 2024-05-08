@@ -86,3 +86,4 @@ def create_visualizations(df: pd.DataFrame) -> None:
     st.pyplot()
 
 create_visualizations(df_filtered)
+
