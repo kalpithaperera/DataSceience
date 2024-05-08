@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import matplotlib.pyplot as plt
 
 # Setting page configuration
 st.set_page_config(
@@ -68,22 +68,22 @@ create_kpi_metrics(kpi_values)
 def create_visualizations(df: pd.DataFrame) -> None:
     """Create visualizations"""
     # Visualization 1: Sales by Region
-    sales_by_region = px.bar(df, x="Region", y="Sales", color="Region", title="Sales by Region")
-    st.plotly_chart(sales_by_region)
+    ax = df.groupby("Region")["Sales"].sum().plot(kind="bar", title="Sales by Region")
+    st.pyplot(ax)
     st.markdown("---")
 
     # Visualization 2: Sales by Category (Pie Chart)
-    sales_by_category_pie = px.pie(df_filtered, values="Sales", names="Category", title="Sales by Category")
-    st.plotly_chart(sales_by_category_pie)
+    ax = df_filtered.groupby("Category")["Sales"].sum().plot(kind="pie", title="Sales by Category")
+    st.pyplot(ax)
     st.markdown("---")
 
     # Visualization 3: Sales by Sub-Category
-    sales_by_subcategory = px.bar(df, x="Sub-Category", y="Sales", color="Sub-Category", title="Sales by Sub-Category")
-    st.plotly_chart(sales_by_subcategory)
+    ax = df.groupby("Sub-Category")["Sales"].sum().plot(kind="bar", title="Sales by Sub-Category")
+    st.pyplot(ax)
     st.markdown("---")
 
     # Visualization 4: Profit by Country
-    profit_by_country = px.bar(df, x="Country", y="Profit", color="Country", title="Profit by Country")
-    st.plotly_chart(profit_by_country)
+    ax = df.groupby("Country")["Profit"].sum().plot(kind="bar", title="Profit by Country")
+    st.pyplot(ax)
 
-create_visualizations(df)
+create_visualizations(df_filtered)
