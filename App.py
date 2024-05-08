@@ -23,6 +23,6 @@ st.set_page_config(
 # Sample data
 df = pd.read_csv("Processed_GlobalSuperstoreLite.csv")
 
-)
+
 # Sample data
 df = pd.read_csv("Processed_GlobalSuperstoreLite.csv")
