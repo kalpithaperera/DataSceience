@@ -26,3 +26,5 @@ df = pd.read_csv("Processed_GlobalSuperstoreLite.csv")
 
 # Sample data
 df = pd.read_csv("Processed_GlobalSuperstoreLite.csv")
+# Main title
+st.title("Sales Dashboard")
