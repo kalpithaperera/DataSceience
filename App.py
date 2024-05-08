@@ -1,7 +1,7 @@
 import plotly as px
 version = '5.22.0'  # If you need to track the specific version
-import pandas==2.2.2 as pd
-import streamlit==1.34.0 as st
+import pandas as pd version = '2.2.2'
+import streamlit as st version = '1.34.0' 
 
 # Setting page configuration
 st.set_page_config(
