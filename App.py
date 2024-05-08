@@ -67,22 +67,22 @@ create_kpi_metrics(kpi_values)
 def create_visualizations(df: pd.DataFrame) -> None:
     """Create visualizations"""
     # Visualization 1: Sales by Region
-    fig1 = df.groupby("Region")["Sales"].sum().plot(kind="bar", title="Sales by Region")
-    st.pyplot(fig1)
+    df.groupby("Region")["Sales"].sum().plot(kind="bar", title="Sales by Region")
+    st.pyplot()
     st.markdown("---")
 
     # Visualization 2: Sales by Category (Pie Chart)
-    fig2 = df_filtered.groupby("Category")["Sales"].sum().plot(kind="pie", title="Sales by Category")
-    st.pyplot(fig2)
+    df_filtered.groupby("Category")["Sales"].sum().plot(kind="pie", title="Sales by Category")
+    st.pyplot()
     st.markdown("---")
 
     # Visualization 3: Sales by Sub-Category
-    fig3 = df.groupby("Sub-Category")["Sales"].sum().plot(kind="bar", title="Sales by Sub-Category")
-    st.pyplot(fig3)
+    df.groupby("Sub-Category")["Sales"].sum().plot(kind="bar", title="Sales by Sub-Category")
+    st.pyplot()
     st.markdown("---")
 
     # Visualization 4: Profit by Country
-    fig4 = df.groupby("Country")["Profit"].sum().plot(kind="bar", title="Profit by Country")
-    st.pyplot(fig4)
+    df.groupby("Country")["Profit"].sum().plot(kind="bar", title="Profit by Country")
+    st.pyplot()
 
 create_visualizations(df_filtered)
