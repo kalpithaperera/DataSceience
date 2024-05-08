@@ -18,7 +18,7 @@ def load_data(file_path: str) -> pd.DataFrame | None:
         return None
 
 # Sample data (replace with your CSV path)
-df = load_data("Processed_GlobalSuperstore.csv")
+df = load_data("Processed_GlobalSuperstoreLite.csv")
 
 if df is None:
     st.stop()
