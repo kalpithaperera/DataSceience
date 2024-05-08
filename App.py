@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-plotly.io.renderers.default = 'plotly_mimetype+notebook_connected'
 
 # Setting page configuration
 st.set_page_config(
@@ -85,5 +84,7 @@ def create_visualizations(df: pd.DataFrame) -> None:
 
     # Visualization 4: Profit by Country
     profit_by_country = px.bar(df, x="Country", y="Profit", color="Country", title="Profit by Country")
-    st.plotly
+    st.plotly_chart(profit_by_country)
+
+create_visualizations(df)
 
