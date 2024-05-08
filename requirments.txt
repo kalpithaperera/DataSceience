@@ -1,6 +1,7 @@
+matplotlib
 plotly
 pandas
 pydeck
 streamlit 
 openpyxl
-matplotlib
+
