@@ -86,3 +86,4 @@ def create_visualizations(df: pd.DataFrame) -> None:
     # Visualization 4: Profit by Country
     profit_by_country = px.bar(df, x="Country", y="Profit", color="Country", title="Profit by Country")
     st.plotly
+
