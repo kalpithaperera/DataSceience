@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+plotly.io.renderers.default = 'plotly_mimetype+notebook_connected'
 
 # Setting page configuration
 st.set_page_config(
