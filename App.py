@@ -1,4 +1,5 @@
-import plotly==5.22.0 as px
+import plotly as px
+version = '5.22.0'  # If you need to track the specific version
 import pandas==2.2.2 as pd
 import streamlit==1.34.0 as st
 
