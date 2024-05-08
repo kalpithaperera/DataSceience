@@ -84,4 +84,6 @@ def create_visualizations(df: pd.DataFrame) -> None:
 
     # Visualization 4: Profit by Country
     ax = df.groupby("Country")["Profit"].sum().plot(kind="bar", title="Profit by Country")
-    st.pyplot
+    st.pyplot(ax)
+
+create_visualizations(df_filtered)
