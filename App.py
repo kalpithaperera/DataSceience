@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import plotly.express as px  # Ensure plotly is installed and compatible with your Python version
 
 # Setting page configuration
 st.set_page_config(
@@ -81,5 +81,10 @@ def create_visualizations(df: pd.DataFrame) -> None:
     # Visualization 4: Profit by Country
     profit_by_country = px.bar(df, x="Country", y="Profit", color="Country", title="Profit by Country")
 
+    # Display the visualizations
+    st.plotly_chart(sales_by_region)
+    st.plotly_chart(sales_by_category_pie)
+    st.plotly_chart(sales_by_subcategory)
+    st.plotly_chart(profit_by_country)
 
-create_visualizations(df)
+create_visualizations(df_filtered)  # Pass df_filtered instead of df
