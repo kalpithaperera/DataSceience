@@ -37,14 +37,14 @@ def create_filters(df: pd.DataFrame) -> pd.DataFrame:
         df_filtered = df[df["Category"].isin(category_filter)]
 
         # Filter by sales channel (if applicable)
-            sales_channel_filter = st.multiselect(
-                "Filter by Sales Channel",
-                options=["Sales Channel"].unique(),
-                default=["Sales Channel"].unique(),
-            )
-            df_filtered = df_filtered[df_filtered["Sales Channel"].isin(sales_channel_filter)]
+        sales_channel_filter = st.multiselect(
+            "Filter by Sales Channel",
+            options=df["Sales Channel"].unique(),
+            default=df["Sales Channel"].unique(),
+        )
+        df_filtered = df_filtered[df_filtered["Sales Channel"].isin(sales_channel_filter)]
 
-        return df_filtered
+    return df_filtered
 
 df_filtered = create_filters(df)
 
@@ -83,4 +83,3 @@ def create_visualizations(df: pd.DataFrame) -> None:
 
 
 create_visualizations(df)
-
