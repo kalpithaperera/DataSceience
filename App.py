@@ -14,9 +14,6 @@
 
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import matplotlib.pyplot as plt
-import os
 
 # Setting page configuration
 st.set_page_config(
@@ -26,6 +23,3 @@ st.set_page_config(
 # Sample data
 df = pd.read_csv("Processed_GlobalSuperstoreLite.csv")
 
-
-# Main title
-st.title("Sales Dashboard")
