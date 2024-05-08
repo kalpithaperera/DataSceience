@@ -88,3 +88,4 @@ def create_visualizations(df: pd.DataFrame) -> None:
     st.plotly_chart(profit_by_country)
 
 create_visualizations(df_filtered)  # Pass df_filtered instead of df
+
